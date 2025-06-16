@@ -1,0 +1,26 @@
+name: CI-CD
+on: [push]
+jobs:
+  ci-cd:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.20.8'
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm run test-local
+
+      - name: Deploy to render
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
+          api-keys: ${{ secrets.MY_RENDER_API_KEYS }} 
