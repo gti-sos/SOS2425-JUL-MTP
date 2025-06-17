@@ -1,5 +1,5 @@
 <script>
-	import Header from './header.svelte';
+	import Header from './Header.svelte';
 	// Consider adding icons (e.g., using 'svelte-icons' or FontAwesome)
 	// import { IconApi, IconChartBar, IconUsersGroup } from 'svelte-icons/fa'; // Example
 </script>

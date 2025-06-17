@@ -1,11 +1,14 @@
 import express from 'express';
+import cors from 'cors';
 import Datastore from 'nedb';
 import { loadBackend_MTP } from './src/back/index.js';
 import { handler } from "./src/front/build/handler.js";
 
 const app = express();
-app.use(express.json()); // Middleware para parsear JSON en las peticiones
 const PORT = process.env.port || 16078;
+
+app.use(express.json()); // Middleware para parsear JSON en las peticiones
+app.use(cors()); // Middleware para permitir CORS
 
 const BASE_API = "/api/v1";
 const RESOURCE_MTP = "management-evolutions";
