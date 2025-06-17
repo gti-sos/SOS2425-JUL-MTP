@@ -3,22 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "workspaces": [
-    "src/back",
-    "src/front"
-  ],
   "type": "module",
   "scripts": {
-    "postinstall": "echo \"Workspaces instalados!\"",
     "start": "node index.js",
-    "start:back": "npm run start --workspace=src/back",
-    "dev:front": "npm run dev   --workspace=src/front",
-    "dev:all": "concurrently \"npm:dev:front\" \"npm:start:back\"",
-    "build:front": "npm run build   --workspace=src/front",
+    "dev:front": "npm run dev -- --open",
     "test-api-local": "npx newman run tests/back/api-tests.json -e tests/back/api-env-local.json",
     "test-api-online": "npx newman run tests/back/api-tests.json -e tests/back/api-env-online.json",
     "test-local": "start-server-and-test start http://localhost:16078 test-api-local",
-    "build": "npm run build   --workspace=src/front"
+    "test":"npm run test-local",
+    "build":"cd src/front; npm install; npm run build"
   },
   "repository": {
     "type": "git",

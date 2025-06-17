@@ -262,7 +262,7 @@
 </svelte:head>
 
 <main>
-    <h1 style="text-align: center; margin-bottom: 20px;">Gráfico: Total Rechazados por Categoría y Comunidad Autónoma</h1>
+    <h1 style="text-align: center; margin-bottom: 20px;">Gráfico: Total Rechazados por Categoría y Comunidad Autónoma o Ciudad</h1>
 
     {#if isLoading}
         <p>Cargando datos para el gráfico...</p>
@@ -274,7 +274,7 @@
         <!-- Usar un div con estilos en línea para el tamaño como en el jsfiddle original -->
         <div id="container-radial" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto">
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 0.9em;">Cada línea curva representa una Comunidad Autónoma. Los segmentos de la línea muestran la suma total de rechazos por cada categoría (Edad, Lugar de Residencia, Renta, Incompatibilidad de Subvenciones) para esa comunidad a lo largo de todos los años.</p>
+        <p style="text-align: center; margin-top: 10px; font-size: 0.9em;">Cada línea curva representa una Comunidad Autónoma o Ciudad. Los segmentos de la línea muestran la suma total de rechazos por cada categoría (Edad, Lugar de Residencia, Renta, Incompatibilidad de Subvenciones) para esa comunidad a lo largo de todos los años.</p>
 
     {:else}
         <p>No hay datos disponibles para mostrar en el gráfico.</p>
