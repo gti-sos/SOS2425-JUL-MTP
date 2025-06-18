@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import path from 'path';
 
 /**
  * Read environment variables from file.
@@ -24,14 +25,26 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
+  timeout: 60000,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    baseURL: 'http://localhost:16078',
     trace: 'on-first-retry',
   },
+  webServer: {
+        // El comando para iniciar tu servidor Node.js que sirve tanto API como Frontend
+        command: 'node src/back/index.js', // Ejecuta el archivo principal de tu backend
+        url: 'http://localhost:16078/MTP', // Playwright esperará a que esta URL devuelva 200 OK
+        timeout: 60 * 1000, // Tiempo máximo de espera para que el servidor inicie (60 segundos)
+        reuseExistingServer: !process.env.CI, // En CI, siempre inicia uno nuevo
+        // Si tu backend tiene logs de "Server listening on port X",
+        // podrías usar `stdout: 'pipe'` y `waitFor: /Server listening on port 16078/`
+        // pero 'url' suele ser suficiente.
+    },
 
   /* Configure projects for major browsers */
   projects: [
