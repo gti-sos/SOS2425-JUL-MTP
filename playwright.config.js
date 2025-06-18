@@ -36,14 +36,14 @@ export default defineConfig({
   },
 
   webServer: {
-        command: 'node src/back/index.js', // El comando simple de inicio del servidor
+        // --- CAMBIO MUY IMPORTANTE AQUÍ ---
+        // Este comando forzará la visibilidad de los logs de inicio del servidor.
+        command: 'cd src/back && npm install && npm start > server_startup_output.log 2>&1 & sleep 15 && cat server_startup_output.log && exit 0',
         url: 'http://localhost:16078/MTP',
-        timeout: 120 * 1000, // Tiempo de espera para que el servidor inicie
+        timeout: 180 * 1000, // Aumenta el timeout para darle mucho tiempo a depurar (3 minutos)
         reuseExistingServer: !process.env.CI,
-        
-        // --- ESTO ES LO CORRECTO PARA VER LOS LOGS DEL WEBSERVER ---
-        stderr: 'pipe', // Canaliza la salida de error estándar del servidor
-        stdout: 'pipe', // Canaliza la salida estándar del servidor
+        stderr: 'pipe', // Mantenemos esto por si acaso, aunque el `cat` es más directo
+        stdout: 'pipe', // Mantenemos esto
     },
   /* Configure projects for major browsers */
   projects: [
