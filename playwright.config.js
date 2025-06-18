@@ -33,7 +33,13 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
-
+  webServer: {
+        command: 'node src/back/index.js', // <--- Asegúrate que esto es correcto
+        url: 'http://localhost:16078/MTP', // <--- Asegúrate que el puerto 16078 es el que usa tu backend
+        timeout: 60 * 1000,
+        reuseExistingServer: !process.env.CI,
+        output: 'attach', // <-- Es vital que esta línea esté presente
+    },
   /* Configure projects for major browsers */
   projects: [
     // {
