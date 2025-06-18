@@ -9,7 +9,7 @@ test.describe('MTP Application Super Simple Check', () => {
     // 1. Navegar a la página MTP
     await page.goto(`${BASE_URL}/MTP`);
 
-    // 2. Verificar que el título de la página del navegador contenga "EBT"
+    // 2. Verificar que el título de la página del navegador contenga "MTP"
     // Esta es una comprobación muy básica de que la página correcta podría estar cargándose.
     await expect(page).toHaveTitle(/MTP/i, { timeout: 10000 });
 
@@ -21,6 +21,4 @@ test.describe('MTP Application Super Simple Check', () => {
     await expect(page).toHaveURL(`${BASE_URL}/MTP`, { timeout: 10000 });
   });
 
-  // Se han eliminado todas las pruebas de CRUD (Crear, Leer, Editar, Borrar)
-  // y las comprobaciones detalladas de elementos específicos como botones o la tabla.
 });
