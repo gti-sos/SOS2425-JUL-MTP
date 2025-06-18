@@ -23,15 +23,7 @@ jobs:
         run: npm run build
 
       - name: Run tests
-        run: npm test 
-
-      - name: Debug Start Backend Server
-        run: 
-          cd src/back
-          node index.js &
-          sleep 10
-        env:
-          PORT: 16078
+        run: npm test
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
