@@ -31,14 +31,19 @@ export default defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    baseURL: 'http://localhost:16078',
     trace: 'on-first-retry',
   },
+
   webServer: {
-        command: 'node src/back/index.js', // <--- Asegúrate que esto es correcto
-        url: 'http://localhost:16078/MTP', // <--- Asegúrate que el puerto 16078 es el que usa tu backend
-        timeout: 60 * 1000,
+        command: 'node src/back/index.js', // El comando simple de inicio del servidor
+        url: 'http://localhost:16078/MTP',
+        timeout: 120 * 1000, // Tiempo de espera para que el servidor inicie
         reuseExistingServer: !process.env.CI,
-        output: 'attach', // <-- Es vital que esta línea esté presente
+        
+        // --- ESTO ES LO CORRECTO PARA VER LOS LOGS DEL WEBSERVER ---
+        stderr: 'pipe', // Canaliza la salida de error estándar del servidor
+        stdout: 'pipe', // Canaliza la salida estándar del servidor
     },
   /* Configure projects for major browsers */
   projects: [
