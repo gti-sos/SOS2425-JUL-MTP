@@ -8,6 +8,11 @@ jobs:
 
     steps:
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+        node-version: '18.20.8'
+
       - name: Checkout code
         uses: actions/checkout@v4
 
