@@ -261,7 +261,10 @@
      <!-- <script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
 </svelte:head>
 
-<main>
+<div class="navigation-buttons">
+	<a href="/MTP/doughnut" class="go-cartogram-btn">Ir a Gráfico Circular (Doughnut)</a>
+</div>
+
     <h1 style="text-align: center; margin-bottom: 20px;">Gráfico: Total Rechazados por Categoría y Comunidad Autónoma o Ciudad</h1>
 
     {#if isLoading}
@@ -280,7 +283,6 @@
         <p>No hay datos disponibles para mostrar en el gráfico.</p>
          <button on:click={fetchDataAndPrepareChart}>Cargar Datos</button>
     {/if}
-</main>
 
 <style>
     /* Puedes añadir estilos adicionales aquí si es necesario */
@@ -297,11 +299,14 @@
         padding: 8px 15px;
         cursor: pointer;
      }
-      /* Si no usas estilos en línea en el HTML para el tamaño del contenedor */
-     /* #container-radial {
-         min-width: 310px;
-         max-width: 600px;
-         height: 400px;
-         margin: 0 auto;
-     } */
+    .navigation-buttons {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    .navigation-buttons button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+        margin: 0 5px;
+        cursor: pointer;
+    }
 </style>
