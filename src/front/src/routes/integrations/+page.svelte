@@ -4,10 +4,6 @@
 	import Header from '../Header.svelte';
     const otherIntegrations = [
         {
-            name: 'G16 - Estadísticas de Emigración (Área Polar con chart.js)',
-            path: '/integrations/g10-registration-stats'
-        },
-        {
             name: 'G12 - Estadísticas de consumo (Barras con chart.js)',
             path: '/integrations/g12-annual-evolutions'
         },
@@ -16,8 +12,12 @@
             path: '/integrations/g14-education-data'
         },
         {
-            name: 'Población española (API Ninjas, Oauth, Proxy, Barras con Plotly)',
-            path: '/integrations/api-ninjas-ebt-correlation'
+            name: 'G16 - Estadísticas de Emigración (Área Polar con chart.js)',
+            path: '/integrations/g10-registration-stats'
+        },
+        {
+            name: 'G21 - Estadísticas de compra y venta de viviendas (TreeMap con plotly)',
+            path: '/integrations/g21-home-buying-selling-stats'
         },
         {
             name: 'Tasa de cambio (Frankfurter, Proxy, Líneas con Plotly)',
@@ -26,8 +26,15 @@
         {
             name: 'Estadísticas covid EEUU (Covid Tracking, Proxy, Indicadores con Plotly)',
             path: '/integrations/api-covid'
-        }
-        
+        },
+        {
+            name: 'Rick and Morty (Rick and Morty API, Proxy, Personajes con Chart.js)',
+            path: '/integrations/rick-and-morty'
+        },
+        {
+            name: 'Buscador de Fotos de la NASA (NASA API, Proxy, Galería de imágenes)',
+            path: '/integrations/nasa'
+        }          
     ];
 
 </script>
