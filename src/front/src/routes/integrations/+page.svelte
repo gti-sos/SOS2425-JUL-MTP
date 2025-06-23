@@ -4,16 +4,16 @@
 	import Header from '../Header.svelte';
     const otherIntegrations = [
         {
+            name: 'G10 - Estadísticas de Registros (Radar con chart.js)',
+            path: '/integrations/g10-registration-stats'
+        },
+        {
             name: 'G12 - Estadísticas de consumo (Barras con chart.js)',
             path: '/integrations/g12-annual-evolutions'
         },
         {
             name: 'G14 - Estadísticas de métodos de enseñanza (Dispersión con chart.js)',
             path: '/integrations/g14-education-data'
-        },
-        {
-            name: 'G16 - Estadísticas de Emigración (Área Polar con chart.js)',
-            path: '/integrations/g10-registration-stats'
         },
         {
             name: 'G21 - Estadísticas de compra y venta de viviendas (TreeMap con plotly)',
