@@ -59,6 +59,19 @@
 		</ul>
 	</section>
 
+	<section class="videos-section">
+		<h2><i class="fas fa-video"></i> Project Explanatory Videos</h2>
+		<ul>
+			<li>
+				Mario Tur Pantión: <a
+				href="https://youtu.be/dMCBrgp4dDo"
+				target="_blank"
+				rel="noopener noreferrer">View Video</a
+				>
+			</li>
+		</ul>
+	</section>
+
 
 	<a href="/" class="back-button"><i class="fas fa-arrow-left"></i> Volver</a>
 </div>
